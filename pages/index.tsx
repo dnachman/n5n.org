@@ -10,7 +10,7 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <main className="font-mono">
+      <main className="">
         <div className="text-2xl text-slate-500 slate-500 h-20 text-center py-5">
           <Link href="/">n5n.org</Link>
         </div>
