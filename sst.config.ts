@@ -1,5 +1,5 @@
 import { SSTConfig } from "sst";
-import { NextjsSite } from "sst/constructs";
+import { Bucket, NextjsSite } from "sst/constructs";
 
 export default {
   config(_input) {
@@ -10,7 +10,7 @@ export default {
   },
   stacks(app) {
     app.stack(function Site({ stack }) {
-      const site = new NextjsSite(stack, "site");
+      const site = new NextjsSite(stack, "site", {});
 
       stack.addOutputs({
         SiteUrl: site.url,
