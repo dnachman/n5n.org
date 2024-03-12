@@ -1,6 +1,6 @@
 "use strict";
 
-import { bedrockText } from "../../components/aws-bedrock";
+import { bedrockText } from "./bedrock-services";
 
 export async function POST(request) {
   const prompt = request.body?.prompt || "What is the meaning of life?";
@@ -17,7 +17,7 @@ export async function POST(request) {
   );
 
   try {
-    const resp = await awsBedrock.bedrockText(prompt, model);
+    const resp = await bedrockText(prompt, model);
 
     return Response.json(resp);
 
