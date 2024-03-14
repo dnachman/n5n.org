@@ -3,10 +3,12 @@
 import { bedrockText } from "./bedrock-services";
 
 export async function POST(request) {
-  const prompt = request.body?.prompt || "What is the meaning of life?";
+  const prompt = request.body?.prompt || "Tell me a joke.";
   const model = request.body?.model || "amazon.titan-text-express-v1";
   const maxTokens = request.body?.maxTokens || null;
   const modelOptions = request.body?.modelOptions || null;
+
+  console.log("Request body: ", request.body);
 
   console.log(
     "Calling bedrock-text: ",
@@ -18,6 +20,8 @@ export async function POST(request) {
 
   try {
     const resp = await bedrockText(prompt, model);
+
+    console.log("Response from bedrock (route.js): ", resp);
 
     return Response.json(resp);
 

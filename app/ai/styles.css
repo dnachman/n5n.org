@@ -16,6 +16,7 @@ label {
 input[type="text"] {
   @apply border-gray-300 rounded-md; /* style the input field with a gray border and rounded corners */
   padding: 0.5rem; /* add some padding to the input field */
+  color: black;
 }
 
 button {
