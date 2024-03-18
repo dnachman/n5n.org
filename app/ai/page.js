@@ -12,6 +12,7 @@ export default function Page() {
 
         try {
             // make http call to api at /api/ai/bedrock
+            console.log('About to call bedrock with prompt (page.js): ', prompt);
             const apiResponse = await fetch('/api/ai/bedrock', {
                 method: 'POST',
                 body: JSON.stringify({ prompt }),
@@ -28,16 +29,18 @@ export default function Page() {
     };
 
     return (
-        <div className="grid grid-flow-col gap-4">
+        <div className="grid gap-4">
             <form onSubmit={handleSubmit}>
-                <label className="col-span-1 mx-5">
+                <label className="mx-5" l>
                     Prompt:
-                    <input type="text" className="grid-span-2 mx-5" value={prompt} onChange={(e) => setPrompt(e.target.value)} />
                 </label>
-                <button className="col-span-2 row-start-auto bg-slate-500" type="submit">Submit</button>
+                <input type="text" className=" mx-5" value={prompt} onChange={(e) => setPrompt(e.target.value)} />
+
+                <button className=" bg-slate-500" type="submit">Submit</button>
             </form>
-            <div className="row-start-2">
-                <div className="col-span-1">Response: { response }</div>
+            <div className="row-start-2 flex">
+                <div className="col-span-1 font-bold">Response: &nbsp; </div>
+                <div className="">{ response }</div>
             </div>
         </div>
     )

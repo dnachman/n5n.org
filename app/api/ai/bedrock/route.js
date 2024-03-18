@@ -3,12 +3,14 @@
 import { bedrockText } from "./bedrock-services";
 
 export async function POST(request) {
-  const prompt = request.body?.prompt || "Tell me a joke.";
-  const model = request.body?.model || "amazon.titan-text-express-v1";
-  const maxTokens = request.body?.maxTokens || null;
-  const modelOptions = request.body?.modelOptions || null;
+  const body = await request.json();
+  console.log("Request body: ", body);
 
-  console.log("Request body: ", request.body);
+  const prompt = body?.prompt || "Tell me a joke.";
+  const model = body?.model || "amazon.titan-text-express-v1";
+  const maxTokens = body?.maxTokens || null;
+  const modelOptions = body?.modelOptions || null;
+
 
   console.log(
     "Calling bedrock-text: ",
