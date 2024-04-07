@@ -19,10 +19,8 @@ export default function SessionData({ session }: { session: Session | null }) {
             the page to avoid exposing sensitive information.
           </p>
         )}
-        <div className="flex flex-col rounded-md bg-neutral-100">
-          <div className="p-4 font-bold rounded-t-md bg-neutral-200">
-            Session
-          </div>
+        <div className="flex flex-col rounded-md bg-slate-400">
+          <div className="p-4 font-bold rounded-t-md bg-slate-500">Session</div>
           <pre className="py-6 px-4 whitespace-pre-wrap break-all">
             {JSON.stringify(session, null, 2)}
           </pre>
