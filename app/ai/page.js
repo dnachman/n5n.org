@@ -3,8 +3,6 @@
 import { useEffect, useState } from "react";
 import { redirect } from "next/navigation";
 
-import "./styles.css";
-
 export default function Page() {
   const [prompt, setPrompt] = useState("");
   const [response, setResponse] = useState("");
@@ -41,9 +39,7 @@ export default function Page() {
           onChange={(e) => setPrompt(e.target.value)}
         />
 
-        <button className=" bg-slate-500" type="submit">
-          Submit
-        </button>
+        <button type="submit">Submit</button>
       </form>
       <div className="row-start-2 flex">
         <div className="col-span-1 font-bold">Response: &nbsp; </div>

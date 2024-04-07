@@ -1,13 +1,12 @@
-"use client";
-
-import { useEffect, useState } from "react";
-import { redirect } from "next/navigation";
-
-import "./styles.css";
+import Link from "next/link";
 
 export default function Page() {
-  const [prompt, setPrompt] = useState("");
-  const [response, setResponse] = useState("");
-
-  return <div className="grid gap-4">Admin area coming soon...</div>;
+  return (
+    <div className="grid gap-4">
+      <h1 className="text-sky-400 text-2xl">Admin Area</h1>
+      <Link href="/admin/session" className="underline">
+        Session information
+      </Link>
+    </div>
+  );
 }
