@@ -29,4 +29,13 @@ export const config = {
   },
 };
 
+export const isAuthorized = (session, component) => {
+  console.log("In isAuthorized", session, component);
+
+  if (session?.user && session?.user === "david@nachman.org") {
+    return true;
+  }
+  return false;
+}
+
 export const { handlers, auth, signIn, signOut } = NextAuth(config);
