@@ -30,7 +30,7 @@ export function MainNav() {
               </ul>
             </NavigationMenuContent>
           </NavigationMenuItem> */}
-          <NavigationMenuItem>
+          {/* <NavigationMenuItem>
             <NavigationMenuLink
               href="/ai"
               className={navigationMenuTriggerStyle()}
@@ -45,7 +45,7 @@ export function MainNav() {
             >
               Admin
             </NavigationMenuLink>
-          </NavigationMenuItem>
+          </NavigationMenuItem> */}
         </NavigationMenuList>
       </NavigationMenu>
     </div>
