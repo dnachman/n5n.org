@@ -1,0 +1,58 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 214, 219, 220;
+  --background-end-rgb: 255, 255, 255;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 0, 0, 0;
+    --background-end-rgb: 0, 0, 0;
+  }
+}
+
+body {
+  color: rgb(var(--foreground-rgb));
+  background: linear-gradient(
+      to bottom,
+      transparent,
+      rgb(var(--background-end-rgb))
+    )
+    rgb(var(--background-start-rgb));
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+h1 {
+  @apply text-sky-400 text-2xl;
+}
+
+form {
+  @apply mx-auto; /* center the form */
+  max-width: 500px; /* set the maximum width of the form */
+}
+
+label {
+  @apply font-bold; /* make the label bold */
+  margin-bottom: 1rem; /* add some spacing between the label and the input field */
+}
+
+input[type="text"] {
+  @apply border-gray-300 rounded-md; /* style the input field with a gray border and rounded corners */
+  padding: 0.5rem; /* add some padding to the input field */
+  color: black;
+}
+
+button {
+  @apply bg-blue-500 text-white font-bold py-2 px-4 rounded-md; /* style the submit button with a blue background and white text */
+  margin-top: 1rem; /* add some spacing between the input field and the submit button */
+}
