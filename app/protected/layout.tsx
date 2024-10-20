@@ -8,7 +8,7 @@ Amplify.configure(outputs);
 
 export default function ProtectedLayout({ children, }: { children: React.ReactNode; }) {
     return (
-        <Authenticator>
+        <Authenticator hideSignUp={true}>
             {children}
         </Authenticator>
     );
