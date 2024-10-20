@@ -17,7 +17,7 @@ export async function middleware(request) {
       return NextResponse.next();
     } catch (error) {
       // Redirect to login page if not authenticated
-      return NextResponse.redirect(new URL('/login', request.url));
+      return NextResponse.redirect(new URL('/auth/login', request.url));
     }
   }
 
