@@ -2,13 +2,11 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import Footer from "@/components/footer";
 import Header from "@/components/header";
-import { Amplify } from "aws-amplify";
-import outputs from "../amplify_outputs.json";
+
 
 
 const inter = Inter({ subsets: ["latin"] });
 
-Amplify.configure(outputs);
 
 export const metadata = {
   title: "n5n.org",
