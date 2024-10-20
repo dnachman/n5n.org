@@ -22,30 +22,14 @@ export function MainNav() {
       </Link>
       <NavigationMenu>
         <NavigationMenuList>
-          {/* <NavigationMenuItem>
-            <NavigationMenuTrigger className="px-2">Apps</NavigationMenuTrigger>
-            <NavigationMenuContent>
-              <ul className="grid gap-3 p-6 md:w-[400px] lg:w-[500px] lg:grid-cols-[.75fr_1fr]">
-                <ListItem href="/ai" title="AI Playground"></ListItem>
-              </ul>
-            </NavigationMenuContent>
-          </NavigationMenuItem> */}
-          {/* <NavigationMenuItem>
-            <NavigationMenuLink
-              href="/ai"
-              className={navigationMenuTriggerStyle()}
-            >
-              AI
-            </NavigationMenuLink>
-          </NavigationMenuItem>
           <NavigationMenuItem>
             <NavigationMenuLink
-              href="/admin"
+              href="/protected"
               className={navigationMenuTriggerStyle()}
             >
-              Admin
+              Protected
             </NavigationMenuLink>
-          </NavigationMenuItem> */}
+          </NavigationMenuItem>
         </NavigationMenuList>
       </NavigationMenu>
     </div>

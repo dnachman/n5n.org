@@ -3,7 +3,10 @@ import "./globals.css";
 import Footer from "@/components/footer";
 import Header from "@/components/header";
 
+
+
 const inter = Inter({ subsets: ["latin"] });
+
 
 export const metadata = {
   title: "n5n.org",
