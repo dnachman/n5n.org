@@ -10,8 +10,8 @@ export async function bedrockText(query, model, maxTokens, modelOptions) {
     streaming: false,
     // endpointUrl: "custom.amazonaws.com",
     credentials: {
-      accessKeyId: process.env.N5N-WEB_AWS_ACCESS_KEY_ID,
-      secretAccessKey: process.env.N5N-WEB_AWS_SECRET_ACCESS_KEY,
+      accessKeyId: process.env.N5N_WEB_AWS_ACCESS_KEY_ID,
+      secretAccessKey: process.env.N5N_WEB_AWS_SECRET_ACCESS_KEY,
     },
     // modelKwargs: {},
     modelKwargs: modelOptions || {},
