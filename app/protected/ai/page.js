@@ -14,20 +14,28 @@ export default function Page() {
       // make http call to api at /api/ai/bedrock
       console.log("About to call bedrock with prompt (page.js): ", prompt);
 
-      var body = {
-        prompt,
-        model: 'amazon.titan-text-express-v1'
+      const options = {
+        method: "POST",
+        body: JSON.stringify({
+          prompt: prompt,
+          model: 'amazon.titan-text-express-v1'
+        })
       }
 
-      const apiResponse = await fetch("/api/ai/bedrock", {
-        method: "POST",
-        body,
-      });
+      console.log("Options (page.js): ", options);
 
-      const promptResponse = await apiResponse.json();
+      const apiResponse = await fetch("/api/ai/bedrock", options);
 
-      console.log("Response from bedrock (page.js): ", promptResponse);
-      setResponse(promptResponse.response);
+      if (apiResponse.status == 200) {
+        console.log("Response from bedrock (page.js): ", apiResponse);
+        const promptResponse = await apiResponse.json();
+        setResponse(promptResponse.response);
+      }
+      else {
+        console.log("Error calling bedrock: ", apiResponse);
+        setResponse(apiResponse.statusText);
+        return;
+      }
     } catch (error) {
       console.log("Error calling bedrock: ", error);
       setResponse(error.message);

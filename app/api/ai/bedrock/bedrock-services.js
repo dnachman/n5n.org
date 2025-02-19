@@ -26,6 +26,7 @@ export async function bedrockText(query, model, maxTokens, modelOptions) {
   // }
   // return chunks.join();
 
+  console.log("Bedrock query: ", query);
   const resp = await bedrockModel.invoke(query);
   console.log("Bedrock response: ", resp);
   return {
